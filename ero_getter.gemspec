@@ -94,6 +94,8 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<pry>, [">= 0"])
       s.add_development_dependency(%q<pry-doc>, [">= 0"])
       s.add_development_dependency(%q<webmock>)
+
+      s.add_development_dependency(%q<faraday>)
     else
       s.add_dependency(%q<activesupport>, [">= 0"])
       s.add_dependency(%q<httpclient>, [">= 0"])

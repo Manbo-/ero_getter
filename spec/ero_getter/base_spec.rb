@@ -9,6 +9,7 @@ describe EroGetter::Base do
     before do
       _regex = regex
       fake(:get, url, 'sample.html')
+      @faraday = _faraday = Faraday.new
       @klazz = Class.new(EroGetter::Base) do
         name 'NijiEro BBS'
         url _regex
@@ -20,6 +21,8 @@ describe EroGetter::Base do
         sub_directory do
           targets.map{|x| x.split(%r{/}).last }.join('/')
         end
+
+        client _faraday
       end
       @klazz.stub(:to_s).and_return('TestClass')
     end
@@ -43,7 +46,8 @@ describe EroGetter::Base do
         its(:name) { should == 'NijiEro BBS' }
         its(:url_regex) { should == regex }
         its(:base_dir) { should == 'test_class' }
-        its(:http_client) { should be_a HTTPClient }
+        # its(:http_client) { should be_a HTTPClient }
+        its(:http_client){ should == @faraday }
         its(:document) { should be_a Nokogiri::HTML::Document }
         its(:title) { should == 'EroGetter Server' }
         its(:url) { should == url }

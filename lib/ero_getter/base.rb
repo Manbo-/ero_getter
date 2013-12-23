@@ -25,7 +25,7 @@ class EroGetter::Base
   end
 
   def http_client
-    @http_client ||= HTTPClient.new
+    HTTPClient.new
   end
 
   def url
@@ -61,11 +61,15 @@ class EroGetter::Base
   end
 
   def get_target(target, count = 0)
-    response = http_client.get(target, :header => {:referer => url}, :follow_redirect => true)
-    unless response.status == 200
-      raise target unless count < 3
-      sleep 2
-      return get_target target, count + 1
+    if http_client.is_a?(HTTPClient)
+      response = http_client.get(target, :header => {:referer => url}, :follow_redirect => true)
+      unless response.status == 200
+        raise target unless count < 3
+        sleep 2
+        return get_target target, count + 1
+      end
+    else
+      response = http_client.get(target)
     end
     response
   end
@@ -152,6 +156,11 @@ class EroGetter::Base
       define_method(:_filename) do |attr|
         yield(attr)
       end
+    end
+
+    def client(client, &block)
+      client.instance_eval(&block) if block_given?
+      define_method(:http_client){ client } # override
     end
   end
 

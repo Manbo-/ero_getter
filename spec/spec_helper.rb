@@ -13,6 +13,7 @@ Spork.prefork do
   require 'rspec'
   require 'ero_getter'
   require 'webmock/rspec'
+  require 'faraday'
 
   # Requires supporting files with custom matchers and macros, etc,
   # in ./support/ and its subdirectories.
