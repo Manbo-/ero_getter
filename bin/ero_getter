@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+require "thor"
+require "io/console"
+require "ero_getter"
+
+class App < Thor
+  desc "get site", "download site"
+  def get(site)
+    EroGetter.new.download(site)
+  end
+
+  desc "sites", "show sites"
+  def sites
+    height, width = IO.console.winsize
+    EroGetter.url_mapping.each do |regex, klazz|
+      print "#{klazz}#{regex.to_s.rjust(width - klazz.to_s.size)}"
+      puts
+    end
+  end
+end
+
+App.start(ARGV)

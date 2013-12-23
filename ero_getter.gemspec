@@ -83,6 +83,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<httpclient>, [">= 0"])
       s.add_runtime_dependency(%q<zipruby>, [">= 0"])
       s.add_runtime_dependency(%q<nokogiri>, [">= 0"])
+      s.add_runtime_dependency(%q<thor>, [">= 0"])
 
       s.add_development_dependency(%q<rspec>, [">= 0"])
       s.add_development_dependency(%q<guard-rspec>, [">= 0"])
@@ -98,6 +99,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<httpclient>, [">= 0"])
       s.add_dependency(%q<zipruby>, [">= 0"])
       s.add_dependency(%q<nokogiri>, [">= 0"])
+      s.add_dependency(%q<thor>, [">= 0"])
       s.add_dependency(%q<rspec>, [">= 0"])
       s.add_dependency(%q<guard-rspec>, [">= 0"])
       s.add_dependency(%q<spork>, [">= 0"])
@@ -113,6 +115,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<httpclient>, [">= 0"])
     s.add_dependency(%q<zipruby>, [">= 0"])
     s.add_dependency(%q<nokogiri>, [">= 0"])
+    s.add_dependency(%q<thor>, [">= 0"])
     s.add_dependency(%q<rspec>, [">= 0"])
     s.add_dependency(%q<guard-rspec>, [">= 0"])
     s.add_dependency(%q<spork>, [">= 0"])
