@@ -83,6 +83,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<httpclient>, [">= 0"])
       s.add_runtime_dependency(%q<zipruby>, [">= 0"])
       s.add_runtime_dependency(%q<nokogiri>, [">= 0"])
+
       s.add_development_dependency(%q<rspec>, [">= 0"])
       s.add_development_dependency(%q<guard-rspec>, [">= 0"])
       s.add_development_dependency(%q<spork>, [">= 0"])
@@ -91,6 +92,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<pry>, [">= 0"])
       s.add_development_dependency(%q<pry-doc>, [">= 0"])
+      s.add_development_dependency(%q<webmock>)
     else
       s.add_dependency(%q<activesupport>, [">= 0"])
       s.add_dependency(%q<httpclient>, [">= 0"])
@@ -104,6 +106,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<pry>, [">= 0"])
       s.add_dependency(%q<pry-doc>, [">= 0"])
+      s.add_dependency(%q<webmock>, [">= 0"])
     end
   else
     s.add_dependency(%q<activesupport>, [">= 0"])
@@ -118,6 +121,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<pry>, [">= 0"])
     s.add_dependency(%q<pry-doc>, [">= 0"])
+    s.add_dependency(%q<webmock>, [">= 0"])
   end
 end
 
