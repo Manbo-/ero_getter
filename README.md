@@ -5,7 +5,7 @@ ero_getter is downloader for ero gazou.
 
 usage
 -----
- EroGetter.download(url)
+ EroGetter.new.download(url)
 
 automaticaly download in $HOME/ero_getter/#{site}/#{sub_directory}/
 
